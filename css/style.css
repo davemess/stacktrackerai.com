@@ -1,0 +1,112 @@
+/* ---------- GLOBAL RESET ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ---------- VARIABLES ---------- */
+:root {
+    --bg: #000;
+    --fg: #fff;
+    --accent: #ff2e2e;
+    /* --font-main: 'Anton', sans-serif; */
+    --font-main: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+/* ---------- BASE LAYOUT ---------- */
+body {
+    /* background: var(--bg); */
+    background: linear-gradient(180deg, #1f1f24 0%, #000000 100%);
+    color: var(--fg);
+    font-family: var(--font-main);
+    /* text-transform: uppercase; */
+    line-height: 1.1;
+}
+
+/* ---------- HERO ---------- */
+.hero {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: clamp(6rem, 10vw, 8rem);
+    font-weight: 900;
+    color: var(--accent);
+}
+
+/* ---------- SUPPLEMENT LIST ---------- */
+.supplement-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 20px;
+    /* max-width: 900px; */
+    margin: 0 auto;
+    padding: 40px 180px;
+}
+
+/* Each supplement gets smaller as the index grows */
+.supplement-item {
+    display: inline-block;
+    font-weight: 800;
+    color: var(--fg);
+    transition: font-size 0.2s ease-out;
+    white-space: nowrap;
+    font-stretch: calc(100% - (var(--index) * .2%));
+    letter-spacing: calc(-0.02em * var(--index));
+}
+
+.inline-item {
+    width: auto;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+/* Dynamically sized in JS */
+
+/* ---------- CTA SECTION ---------- */
+.cta {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.cta-title {
+    font-size: clamp(2rem, 10vw, 8rem);
+    font-weight: 900;
+    color: var(--fg);
+    margin-bottom: 40px;
+}
+
+.cta-highlight {
+    color: var(--accent);
+}
+
+.app-badge img {
+    width: 200px;
+    height: auto;
+    filter: grayscale(100%);
+}
+
+/* Make supplement list able to wrap inline elements */
+.supplement-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 20px;
+}
+
+
+/* Small ones shrink & flow horizontally */
+.inline-item {
+    width: auto;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+    .app-badge img {
+        width: 160px;
+    }
+}
